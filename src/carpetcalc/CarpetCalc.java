@@ -26,17 +26,35 @@ public class CarpetCalc {
 
     public static void measurewidth() { //here I'll allow input for the room width
         
-        Scanner scanner1 = new Scanner(System.in);
+        double width = 0;
         System.out.println("Enter width (in meters)");
-        width = Double.parseDouble(scanner1.nextLine()); 
+        Scanner scanner1 = new Scanner(System.in);
+        try
+            { //blocks answers that aren't integers
+                width = Double.parseDouble(scanner1.nextLine());
+            }
+            catch(IllegalArgumentException ex) 
+            {
+                System.out.println("Nope, use a number, and a sensible one at that");
+                measurewidth();
+            }
         
     }
     
     public static void measurelength() { //see above, but length
         
-        Scanner scanner2 = new Scanner(System.in);
+        double length = 0;
         System.out.println("Enter length (in meters)");
-        length = Double.parseDouble(scanner2.nextLine());
+        Scanner scanner2 = new Scanner(System.in);
+        try
+            { //blocks answers that aren't integers
+                length = Double.parseDouble(scanner2.nextLine());
+            }
+            catch(IllegalArgumentException ex) 
+            {
+                System.out.println("Nope, use a number, and a sensible one at that");
+                measurelength();
+            }
         
     }
     
